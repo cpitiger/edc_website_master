@@ -1,0 +1,57 @@
+/*------------------------------------------------------------------
+[Color Scheme Stylesheet]
+
+Project:    Stig
+Version:    1.0
+Last change:    Initial RELEASED
+Primary use:    MultiPurpose Template  
+-------------------------------------------------------------------*/
+
+a, a:hover,
+.btn-mod.btn-border-c,
+.btn-mod.btn-w-color,
+.tpl-progress.progress-color .progress-bar,
+.tpl-progress.progress-color .progress-bar > span
+{
+    color: #4caf50;
+}
+
+.color{
+    color: #4caf50 !important;
+}
+
+.btn-mod.btn-border-c,
+.team-item-image,
+.post-prev-border
+{
+    border-color: #4caf50;
+}
+
+
+.loader,
+.btn-mod.btn-border-c:hover,
+.btn-mod.btn-border-c:focus,
+.btn-mod.btn-color,
+.btn-mod.btn-color:hover,
+.btn-mod.btn-color:focus,
+.bg-color,
+.bg-colort-alfa:before,
+.bg-colort-alfa .YTPOverlay:before,
+.bg-color-alfa-30:before,
+.bg-color-alfa-30 .YTPOverlay:before,
+.bg-color-alfa-50:before,
+.bg-color-alfa-50 .YTPOverlay:before,
+.bg-color-alfa-70:before,
+.bg-color-alfa-70 .YTPOverlay:before,
+.bg-color-alfa-90:before,
+.bg-color-alfa-90 .YTPOverlay:before,
+.service-item:hover,
+.alt-features-icon-1,
+.works-grid.hover-color .work-item:hover .work-img:after,
+.tpl-progress.progress-color .progress-bar,
+.tpl-progress-alt.progress-color .progress-bar,
+.hs-line-10.highlight
+{
+    background-color: #4caf50;
+}
+
