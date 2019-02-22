@@ -11,6 +11,7 @@ Primary use:    MultiPurpose Template
 @import "font-awesome.min.css";
 @import "et-line.css";
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,700,700italic,300);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Roboto:400,700,900');
 
 /*------------------------------------------------------------------
 [Table of contents]
@@ -2066,10 +2067,21 @@ a.logo:hover{
 .section-heading {
     margin-top: 0;
     margin-bottom: 28px;
-    font-size: 36px;
-    font-weight: 300;
+    font-size: 55px;
+    font-weight: 900;
     line-height: 1.45;
+    font-family: 'Roboto', sans-serif;
 }
+
+.subsection-heading {
+    margin-top: 0;
+    margin-bottom: 28px;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.45;
+    font-family: 'Roboto', sans-serif;
+}
+
 .section-line{
     width: 80px;
     height: 2px;
@@ -2084,6 +2096,7 @@ a.logo:hover{
     font-weight: 300;
     color: #777;
     line-height: 1.7778;
+    font-family: 'Open Sans', sans-serif;
 }
 .section-text blockquote{
     margin-top: -5px;
