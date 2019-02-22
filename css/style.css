@@ -2072,6 +2072,7 @@ a.logo:hover{
     font-weight: 900;
     line-height: 1.45;
     font-family: 'Roboto', sans-serif;
+    text-align: left;
 }
 
 .subsection-heading {
