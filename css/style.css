@@ -510,6 +510,7 @@ a.btn-mod{
     border: 2px solid transparent;
     font-size: 11px;
     font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 1px;
@@ -549,7 +550,7 @@ a.btn-mod:focus{
 .btn-mod.btn-medium{
     padding: 9px 37px 8px;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: 2px;
 } 
 .btn-mod.btn-large{
@@ -4600,7 +4601,6 @@ section:hover .small-item-carousel .owl-next{
     margin-bottom: 10px;
     font-size: 13px;
     font-weight: 400;
-    text-transform: uppercase;
     letter-spacing: 1px;
 }
 .accordion > dt > a{
@@ -4676,6 +4676,23 @@ section:hover .small-item-carousel .owl-next{
 /*
  * Toggle
  */
+.toggle-title{
+    margin-top: 0;
+    margin-bottom: 28px;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.45;
+    font-family: 'Roboto', sans-serif;
+    text-transform: none;
+}
+
+.toggle-text{
+    font-size: 18px;
+    font-weight: 300;
+    color: #777;
+    font-family: 'Open Sans', sans-serif;
+    right: 50px;
+}
 
 .toggle > dt{
     margin-bottom: 10px;
