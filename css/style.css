@@ -638,12 +638,12 @@ a.btn-mod:focus{
 
 .btn-mod.btn-color{
       color: #fff;
-      background: #e91e63;
+      background: #FF7536;
 }
 .btn-mod.btn-color:hover,
 .btn-mod.btn-color:focus{
     color: #fff;
-    background: #e91e63;
+    background: #FF7536;
     opacity: .85;
 }
 
@@ -1314,6 +1314,10 @@ a.logo:hover{
   width: 100%;
   display: block;
   margin: 20px auto;
+}
+
+.members-sideber .section-text {
+  margin-bottom: 50%;
 }
 
 .members-content {
