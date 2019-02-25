@@ -212,7 +212,7 @@ img:not([draggable]), embed, object, video {
 
 
 .page-loader{
-     display:block;
+    display:block;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -229,7 +229,7 @@ img:not([draggable]), embed, object, video {
     top: 50%;
     left: 50%;;
     margin: -20px 0 0 -20px;
-    background-color: #e91e63;
+    background-color: #8a949b;
     text-indent: -12345px;
 
     -webkit-border-radius: 100%;
@@ -1058,9 +1058,10 @@ mobile-on .inner-nav .btn{
     margin-top: 0;
     position: relative;
     font-size: 64px;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-weight: 900;
+    text-transform: none;
     line-height: 1.37;
+    font-family: 'Roboto', sans-serif;
 }
 .hs-line-3{
     margin-top: 0;
@@ -1123,7 +1124,7 @@ mobile-on .inner-nav .btn{
     display: inline-block;
     position: relative;
     padding: 1px 10px;
-    background: rgba(0,0,0, .9);
+    background: #8a949b;
     font-size: 30px;
     font-weight: 300;
     text-transform: uppercase;
@@ -1132,7 +1133,7 @@ mobile-on .inner-nav .btn{
     margin: 0 10px;
 }
 .hs-line-10.highlight{
-    background: #e91e63;
+    background: #ff7636;
     opacity: .97;
 }
 .hs-line-10.transparent{
@@ -1145,6 +1146,8 @@ mobile-on .inner-nav .btn{
     font-size: 30px;
     font-weight: 300;
     line-height: 1.8;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
 }
 .hs-line-11 strong{
     font-weight: 500;
@@ -2194,6 +2197,7 @@ a.logo:hover{
 
 .split-section{
     width: 100%;
+    height: 500px;
     display: block;
     position: relative;
     overflow: hidden;
@@ -2714,9 +2718,10 @@ a.logo:hover{
 }
 .count-number{
     font-size: 48px;
-    font-weight: 300;
+    font-weight: 900;
     line-height: 1.3;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 .count-descr{
     color: #999;
