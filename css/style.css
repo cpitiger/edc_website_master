@@ -93,6 +93,10 @@ Section Text:       15px/1.7 "Open Sans", arial, sans-serif;
 
 -------------------------------------------------------------------*/
 
+.background-blue{
+    background-color: #3c5a78;
+    color: white;
+}
 
 /* ==============================
    Common styles

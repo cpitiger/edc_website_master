@@ -13,18 +13,18 @@ a, a:hover,
 .tpl-progress.progress-color .progress-bar,
 .tpl-progress.progress-color .progress-bar > span
 {
-    color: #03a9f4;
+    color: #3c5a78;
 }
 
 .color{
-    color: #03a9f4 !important;
+    color: #3c5a78 !important;
 }
 
 .btn-mod.btn-border-c,
 .team-item-image,
 .post-prev-border
 {
-    border-color: #03a9f4;
+    border-color: #3c5a78;
 }
 
 
@@ -52,6 +52,6 @@ a, a:hover,
 .tpl-progress-alt.progress-color .progress-bar,
 .hs-line-10.highlight
 {
-    background-color: #03a9f4;
+    background-color: #3c5a78;
 }
 
