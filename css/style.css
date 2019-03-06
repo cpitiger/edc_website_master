@@ -642,12 +642,12 @@ a.btn-mod:focus{
 
 .btn-mod.btn-color{
       color: #fff;
-      background: #FF7536;
+      background: #3c5a78;
 }
 .btn-mod.btn-color:hover,
 .btn-mod.btn-color:focus{
     color: #fff;
-    background: #FF7536;
+    background: #3c5a78;
     opacity: .85;
 }
 
@@ -1124,7 +1124,7 @@ mobile-on .inner-nav .btn{
     display: inline-block;
     position: relative;
     padding: 1px 10px;
-    background: #8a949b;
+    background: #3c5a78;
     font-size: 30px;
     font-weight: 300;
     text-transform: uppercase;
@@ -1278,10 +1278,11 @@ a.logo:hover{
     float: right;
     margin: auto;
     font-size: 13px;
-    font-weight: 400;
+    font-weight: 500;
     text-transform: uppercase;
     text-align: center;
     line-height: 1.2;
+    font-family: 'Roboto', sans-serif;
 }
 .inner-nav ul  li{
     float: left;
@@ -2098,6 +2099,7 @@ a.logo:hover{
     line-height: 1.45;
     font-family: 'Roboto', sans-serif;
     text-align: left;
+    color: white;
 }
 
 .subsection-heading {
@@ -2120,7 +2122,7 @@ a.logo:hover{
 }
 .section-text{
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400;
     color: #777;
     line-height: 1.7778;
     font-family: 'Open Sans', sans-serif;
@@ -2369,7 +2371,6 @@ a.logo:hover{
    ============================== */
 
 .team-grid{
-
 }
 .team-item{
 
@@ -2377,7 +2378,7 @@ a.logo:hover{
 .team-item-image{
     position: relative;
     overflow: hidden;
-    border-bottom: 2px solid #e91e63;
+    border-bottom: 2px solid #3c5a78;
 }
 .team-item-image.no-bord{
     border: none;
@@ -3678,7 +3679,7 @@ a.link-to-top{
 .blog-media img,
 .blog-media .video,
 .blog-media iframe{
-
+    width: 1140px;
 }
 .blog-item-title{
     margin: 0 0 .5em 0;
