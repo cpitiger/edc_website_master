@@ -3646,7 +3646,7 @@ a.link-to-top{
    ============================== */
 
 .blog-item{
-    margin-bottom: 80px;
+    /*margin-bottom: 80px;*/
     position: relative;
 }
 
@@ -3673,6 +3673,21 @@ a.link-to-top{
     font-weight: 400;
     color: #555;
 }
+.column {
+    padding-left: 10px;
+    padding-right: 30px;
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  padding-bottom: 70px;
+}
+
 .blog-media{
     margin-bottom: 30px;
 }
