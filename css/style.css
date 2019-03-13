@@ -112,7 +112,7 @@ Section Text:       15px/1.7 "Open Sans", arial, sans-serif;
 .inline-block{display:inline-block;}
 .white{ color: #fff !important; }
 .black{ color: #000 !important; }
-.color{ color: #e91e63 !important; }
+.color{ color: #3c5a78 !important; }
 .stick-fixed{
     position: fixed !important;
     top: 0;
