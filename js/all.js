@@ -713,6 +713,15 @@ function init_wow(){
     })(jQuery);
 }
 
+function blog_show_more() {
+  var x = document.getElementById("post_show_more");
+    if (x.style === "hidden") {
+    x.style.display = "block";
+    } else {
+    x.style = "hidden";
+    }
+}
+
 
 /* ---------------------------------------------
  Masonry

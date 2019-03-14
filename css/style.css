@@ -274,11 +274,11 @@ body{
 }
 
 a{
-    color: #e91e63;
+    color: #3c5a78;
     text-decoration: none;
 }
 a:hover{
-    color: #e91e63;
+    color: #3c5a78;
     text-decoration: underline;
 }
 
@@ -1713,6 +1713,26 @@ a.logo:hover{
 /*
  * Common
  */
+.testimonial-section{
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    padding: 120px 0 140px 0;
+}
 
 .page-section,
 .small-section{
@@ -2072,7 +2092,7 @@ a.logo:hover{
 .bg-yellow{  background-color: #ffce02 !important; }
 .bg-cyan{ background-color: #27c5c3 !important; }
 .bg-green{ background-color: #58bf44 !important; }
-.bg-blue{ background-color: #43a5de !important; }
+.bg-blue{ background-color: #3c5a78 !important; }
 .bg-purple{ background-color: #375acc !important; }
 .bg-red{ background-color: #e13939 !important; }
 
@@ -2339,10 +2359,11 @@ a.logo:hover{
     width: 100%;
 }
 .alt-service-item{
-    margin: 60px 0 0 0;
+    margin: 60px 0 50px 0;
     position: relative;
     padding-left: 55px;
     padding-top: 3px;
+    padding-bottom: 3px;
     font-size: 13px;
     font-weight: 300;
     color: #999;
@@ -2377,7 +2398,14 @@ a.logo:hover{
     transition: all 0.17s cubic-bezier(0.000, 0.000, 0.580, 1.000);
 }
 .alt-services-title{
-    margin: 0 0 10px 0;
+    margin: 0 0 5px 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: 400;
+    color: #111;
+}
+.alt-services-title2{
+    margin: 6px 6px 6px 0;
     padding: 0;
     font-size: 15px;
     font-weight: 400;
@@ -4366,7 +4394,7 @@ table.shopping-cart-table tr td{
 	display: block;
 	width: 100%;
 	position: absolute;
-	bottom: 45px;
+	bottom: 60px;
 	left: 0;
 	text-align: center;
     z-index: 100 !important;
@@ -4532,8 +4560,9 @@ section:hover .small-item-carousel .owl-next{
 
 .tpl-minimal-tabs{
     display: inline-block;
-    font-size: 12px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 1px;
