@@ -3769,6 +3769,7 @@ a.link-to-top{
     width: 50%;
 }
 
+
 /* Clear floats after the columns */
 .row:after {
   content: "";
@@ -4618,23 +4619,31 @@ section:hover .small-item-carousel .owl-next{
     text-decoration: none;
     color: #000;
     background: none;
-    border: 1px solid transparent;
+    /*border: 1px solid transparent;*/
 
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
 }
 .tpl-minimal-tabs > li > a:hover{
     background: none;
-    border-color: #e9e9e9;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid #e9e9e9;
+    /*border-bottom-color: #e9e9e9;*/
     color: #777;
 }
 .tpl-minimal-tabs li.active a,
 .tpl-minimal-tabs li.active a:hover{
-    border: 1px solid #222 !important;
+    border-bottom: 1px solid #222 !important;
     background: none !important;
     color: #000;
     cursor: default;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid #e9e9e9;
 }
 .tpl-minimal-tabs-cont{
 }
