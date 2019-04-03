@@ -481,11 +481,16 @@ Primary use:    MultiPurpose Template
     .form select.input-lg{
         height: 38px;
     }
+
+    .subsection-heading{
+        font-size: 28px;
+    }
+
     .hs-line-1 {
         font-size: 18px;
     }
     .hs-line-2{
-        font-size: 28px;
+        font-size: 36px;
     }
     .hs-line-5 {
         font-size: 30px;

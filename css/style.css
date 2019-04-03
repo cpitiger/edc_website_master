@@ -1483,7 +1483,7 @@ a.logo:hover{
 .mobile-on .desktop-nav ul{
     width: 100%;
     float: none;
-    background: rgba(18,18,18, .97);
+    background: #3c5a78;
     position: relative;
     overflow-x: hidden;
 }
@@ -2238,7 +2238,7 @@ a.logo:hover{
  */
 .special_split-section{
     width: 100%;
-    height: 600px;
+    height: 500px;
     display: block;
     position: relative;
     overflow: hidden;
@@ -2296,7 +2296,6 @@ a.logo:hover{
     width: 50%;
     position: relative;
     overflow: hidden;
-
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
