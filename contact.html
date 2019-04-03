@@ -235,14 +235,16 @@
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
 
-                            <form class="form contact-form" id="contact_form" autocomplete="off">
+                            <form class="gform" method="POST" data-email="avamrobinson@gmail.com" action="https://script.google.com/macros/s/AKfycbwjXwnqQVWscV2QzV2lfEV4UqkdphiYOmRG5WsD86rwDllHkFaj/exec">
+                            <div class="form contact-form" id="contact_form" autocomplete="off">
+                                <div class="form-elements">
                                 <div class="clearfix">
 
                                     <div class="cf-left-col">
 
                                         <!-- First Name -->
                                         <div class="form-group">
-                                            <input type="text" name="name" id="name" class="input-lg form-control" placeholder="First Name" pattern=".{3,100}" required>
+                                            <input type="text" name="first-name" id="first-name" class="input-lg form-control" placeholder="First Name" pattern=".{3,100}" required>
                                         </div>
 
                                     </div>
@@ -251,7 +253,7 @@
 
                                         <!-- Last Name -->
                                         <div class="form-group">
-                                            <input type="text" name="name" id="name" class="input-lg form-control" placeholder="Last Name" pattern=".{3,100}" required>
+                                            <input type="text" name="last-name" id="last-name" class="input-lg form-control" placeholder="Last Name" pattern=".{3,100}" required>
                                         </div>
 
                                     </div>
@@ -264,7 +266,7 @@
 
                                         <!-- Subject -->
                                         <div class="form-group">
-                                            <select class="form-control input-lg">
+                                            <select class="form-control input-lg"name="subject" id="subject">
                                                 <option>Subject</option>
                                                 <option>Build an EDC home</option>
                                                 <option>Support EDC</option>
@@ -304,7 +306,11 @@
                                 </div>
 
 
-                                <div id="result"></div>
+                                <div id="result"></div>   
+                            </div>
+                                <div style="display:none" class="thankyou_message">
+                                    <h2>Thanks for contacting us. We will get back to you soon!</h2>
+                            </div>
                             </form>
 
                         </div>
@@ -377,9 +383,8 @@
         <script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
         <script type="text/javascript" src="js/jquery.simple-text-rotator.min.js"></script>
         <script type="text/javascript" src="js/all.js"></script>
-        <script type="text/javascript" src="js/contact-form.js"></script>
         <script type="text/javascript" src="js/jquery.ajaxchimp.min.js"></script>
         <!--[if lt IE 10]><script type="text/javascript" src="js/placeholder.js"></script><![endif]-->
-
+    <script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
     </body>
 </html>
