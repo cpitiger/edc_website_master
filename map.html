@@ -64,25 +64,25 @@
 
   <div id="two" class="container-fluid sidebar split split-horizontal">
     <div class="side-block" style="height:auto;">
-      <h4 class="side-title">Address</h4>
+      <h5 class="side-title">Address</h5>
       <p class="addName" id="addName">
         Select a Property
       </p>
     </div>
     <div class="side-block" style="height: 25%; max-height:25%;">
-      <h4 class="side-title">Compatability Information</h4>
+      <h5 class="side-title">Compatability Information</h5>
       <p class="addName" id="compInfo" style="max-height: 80%; overflow-y: scroll;">
         Select a Property
       </p>
     </div>
     <div class="side-block" style="height: 15%; max-height: 15%;">
-      <h4 class="side-title">Extra Information</h4>
+      <h5 class="side-title">Extra Information</h5>
       <p class="addName" id="locInfo" style="max-height: 80%; overflow-y: scroll;">
         Select a Property
       </p>
     </div>
     <div class="side-block" style="height:29%; max-height: 29%;">
-      <h4 class="side-title">Compatability Calculation</h4>
+      <h5 class="side-title">Compatability Calculation</h5>
       <p class="addName" id="comp" style="max-height: 80%; overflow-y: scroll;">
         Select a Property
       </p>
@@ -91,10 +91,51 @@
       <a class="example_c" onclick="printStatement()" target="_blank" rel="nofollow noopener">Download Information</a>
     </div>
   </div>
-</div>
+
+  <!-- <a href="#" type="button" class="btn help-button btn-mod" data-toggle="modal" data-target="#helpModal">
+    <i class="fa fa-question fa-2x"></i>
+  </a> -->
+  <div class="local-scroll btn btn-mod btn-w btn-large help-button" class="btn help-button btn-mod" data-toggle="modal" data-target="#helpModal">
+    <a href style="color: white !important;" data-toggle="modal" data-target="#helpModal">
+      <!-- <i class="fa fa-question fa-2x"></i> -->
+      need help?
+    </a>
+  </div>
 
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">How to Use the Compatability Map</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+        <h6>Search your Address on the map.</h6>
+        <p class="map-help-text">Click inside the search box within the map view and search for your full Evanston address.</p>
+        <img src="./images/help1.png" alt="" style="width: 80%; margin-left: 10%; box-shadow: 1px 1px 6px 2px rgba(0,0,0,0.19)">
+        <h6>Click on your primary house.</h6>
+        <p class="map-help-text">Click on the primary household structure on your property. (If there are several structures on your property such as a detatched garage, click on the main house.)</p>
+        <img src="./images/help2.png" alt="" style="width: 80%; margin-left: 10%; box-shadow: 1px 1px 6px 2px rgba(0,0,0,0.19)">
+        <h6>Consult the Compatibility Info on the Right Sidebar.</h6>
+        <p class="map-help-text">If your property shows <span style="text-decoration: underline; color: green">Compatible!</span> within the calculation section, EDC has determined that your property is a good fit for a coach house. Please contact EDC if your property does not have information available.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
+
+
+
 
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
 <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' />
@@ -139,6 +180,8 @@ map.addLayer({ //orange dot on map when searching
 // makes a selection and add a symbol that matches the result.
 geocoder.on('result', function(ev) {
 map.getSource('single-point').setData(ev.result.geometry);
+console.log(ev)
+map.flyTo({center: ev.result.center, zoom : 19})
 });
 });
 
@@ -173,18 +216,6 @@ map.addControl(new mapboxgl.NavigationControl()); //nav
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.5.9/split.min.js"></script>
 <script>
-  // window.Split(['#one', '#two'], {
-  //   elementStyle: (dimension, size, gutterSize) => ({
-  //       'flex-basis': `calc(${size}% - ${gutterSize}px)`,
-  //   }),
-  //   gutterStyle: (dimension, gutterSize) => ({
-  //       'flex-basis':  `${gutterSize}px`,
-  //   }),
-  //   sizes: [25, 75],
-  //   minSize: 200,
-  //   direction: 'horizontal'
-  // })
-
   Split(['#map', '#two'], {
     sizes: [73, 27],
     direction: 'horizontal',

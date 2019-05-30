@@ -6,7 +6,7 @@ body {
   z-index: -2;
 }
 
-h4 {
+h4, h5 {
   margin: 0 !important;
 }
 
@@ -121,7 +121,7 @@ input{
 .sidebar {
   background-color: rgb(255, 255, 255);
   z-index: 1;
-  /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   overflow-x: hidden;
   padding-top: 1rem;
 }
@@ -170,4 +170,29 @@ input{
   .sidebar {
       margin-top: 0 !important;
   }
+}
+
+.help-button {
+  position: absolute;
+  /* width: 50px !important; */
+  height: 38px !important;
+  border-radius: 25px !important;
+  top: 55px;
+  left: 10px;
+  background-color: #ff7636 !important;
+  color: white !important;
+  padding: 10px 25px 11px !important;
+  border: 0 !important;
+  box-shadow: 1px 1px 6px 2px rgba(0,0,0,0.19)
+}
+.help-button:focus {outline:none !important;}
+
+.modal h6 {
+  margin-bottom: 0 !important;
+  margin-top: 18px !important;
+}
+
+.map-help-text {
+  margin-bottom: 10px;
+  padding: 10px;
 }
