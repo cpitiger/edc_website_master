@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset='utf-8' />
+  <title>EDC Compatability Calculator</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+  <script src='jsPDF.min.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href='./css/map.css' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style-responsive.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/vertical-rhythm.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+</head>
+
+<body>
+
+<!-- Navigation panel -->
+<nav class="main-nav js-stick">
+  <div class="full-wrapper relative clearfix">
+      <!-- Logo ( * your text or image into link tag *) -->
+      <div class="nav-logo-wrap local-scroll">
+          <a href="index.html" class="logo">
+              <img src="images/logo.png" alt="" />
+          </a>
+      </div>
+      <div class="mobile-nav">
+          <i class="fa fa-bars"></i>
+      </div>
+      <!-- Main Menu -->
+      <div class="inner-nav desktop-nav">
+          <ul class="clearlist scroll-nav local-scroll">
+              <li><a href="index.html" style="color:black;">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="build.html">Build</a></li>
+              <li><a href="join.html">Join</a></li>
+              <li><a href="news.html">News</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html">Compatability Map</a></li>                          
+          </ul>
+      </div>
+      <!-- End Main Menu -->
+  </div>
+</nav>
+<!-- End Navigation panel -->
+
+
+<div class="split-container">
+
+  <!-- map -->
+  <div id='map' class="split split-horizontal"></div>
+  <!-- end map -->
+
+  <div id="two" class="container-fluid sidebar split split-horizontal">
+    <div class="side-block" style="height:auto;">
+      <h4 class="side-title">Address</h4>
+      <p class="addName" id="addName">
+        Select a Property
+      </p>
+    </div>
+    <div class="side-block" style="height: 25%; max-height:25%;">
+      <h4 class="side-title">Compatability Information</h4>
+      <p class="addName" id="compInfo" style="max-height: 80%; overflow-y: scroll;">
+        Select a Property
+      </p>
+    </div>
+    <div class="side-block" style="height: 15%; max-height: 15%;">
+      <h4 class="side-title">Extra Information</h4>
+      <p class="addName" id="locInfo" style="max-height: 80%; overflow-y: scroll;">
+        Select a Property
+      </p>
+    </div>
+    <div class="side-block" style="height:29%; max-height: 29%;">
+      <h4 class="side-title">Compatability Calculation</h4>
+      <p class="addName" id="comp" style="max-height: 80%; overflow-y: scroll;">
+        Select a Property
+      </p>
+    </div>
+    <div class="button_cont">
+      <a class="example_c" onclick="printStatement()" target="_blank" rel="nofollow noopener">Download Information</a>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' />
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiZHBhcnNvbnMxNiIsImEiOiJjam8zNW14dHowdG9pM3ZrN2Rid3JiMGZrIn0.q-SUyFAci8s0_CvRiS11Tg';
+const map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/dparsons16/cjo35ptmk0l9e2spflzgn340m',
+  center: [-87.6877, 42.0451],   //-87.691849, 42.065388
+  zoom: 14
+});
+
+var geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken
+});
+
+map.addControl(geocoder);
+
+map.addControl(new mapboxgl.FullscreenControl());
+
+map.on('load', function(){
+  map.addSource('single-point', {     //single point for searching
+"type": "geojson",
+"data": {
+"type": "FeatureCollection",
+"features": []
+}
+});
+
+map.addLayer({ //orange dot on map when searching
+"id": "point",
+"source": "single-point",
+"type": "circle",
+"paint": {
+"circle-radius": 10,
+"circle-color": "#FF7536"
+}
+});
+
+// Listen for the `result` event from the MapboxGeocoder that is triggered when a user
+// makes a selection and add a symbol that matches the result.
+geocoder.on('result', function(ev) {
+map.getSource('single-point').setData(ev.result.geometry);
+});
+});
+
+map.addControl(new mapboxgl.NavigationControl()); //nav 
+
+</script>
+
+<!-- JS -->
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/SmoothScroll.js"></script>
+<script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
+<script type="text/javascript" src="js/jquery.localScroll.min.js"></script>
+<script type="text/javascript" src="js/jquery.viewport.mini.js"></script>
+<script type="text/javascript" src="js/jquery.countTo.js"></script>
+<script type="text/javascript" src="js/jquery.appear.js"></script>
+<script type="text/javascript" src="js/jquery.sticky.js"></script>
+<script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
+<script type="text/javascript" src="js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="js/all.js"></script>
+<script type="text/javascript" src="js/jquery.ajaxchimp.min.js"></script>
+
+<script src="./js/area_zillow.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.5.9/split.min.js"></script>
+<script>
+  // window.Split(['#one', '#two'], {
+  //   elementStyle: (dimension, size, gutterSize) => ({
+  //       'flex-basis': `calc(${size}% - ${gutterSize}px)`,
+  //   }),
+  //   gutterStyle: (dimension, gutterSize) => ({
+  //       'flex-basis':  `${gutterSize}px`,
+  //   }),
+  //   sizes: [25, 75],
+  //   minSize: 200,
+  //   direction: 'horizontal'
+  // })
+
+  Split(['#map', '#two'], {
+    sizes: [73, 27],
+    direction: 'horizontal',
+    gutterSize: 7,
+    minSize: [100, 0],
+    snapOffset: 100
+  });
+</script>
+</body>
+</html>
