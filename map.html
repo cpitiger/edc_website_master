@@ -180,7 +180,6 @@ map.addLayer({ //orange dot on map when searching
 // makes a selection and add a symbol that matches the result.
 geocoder.on('result', function(ev) {
 map.getSource('single-point').setData(ev.result.geometry);
-console.log(ev)
 map.flyTo({center: ev.result.center, zoom : 19})
 });
 });

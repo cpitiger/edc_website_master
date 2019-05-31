@@ -12,17 +12,17 @@ var curZone;
 //onclick function to request data from multiple sources and display information in a popup. 
 map.on('click', function(e) {
   lnglat = e.lngLat
-  console.log(lnglat)
-  console.log([lnglat["lng"],lnglat["lat"]])
+  // console.log(lnglat)
+  // console.log([lnglat["lng"],lnglat["lat"]])
   axios.get(`${parcelUrl}${lnglat["lng"]},${lnglat["lat"]}.json`, {
     params: {
       access_token: token
     }
   })
   .then(response => {
-    console.log(response.data)
+    // console.log(response.data)
     areaOfParcel = response.data.features[0].properties.shape_star
-    console.log(`afea of parcel is ${areaOfParcel}`)
+    // console.log(`afea of parcel is ${areaOfParcel}`)
   })
   .then(function () {
     popup.setLngLat(lnglat)
@@ -34,20 +34,20 @@ map.on('click', function(e) {
     })
   })
   .then(response => {
-    console.log(response.data)
+    // console.log(response.data)
     areaOfHouse = response.data.features[0].properties.SHAPESTArea
-    console.log(areaOfHouse)
+    // console.log(areaOfHouse)
     return geocoder.mapboxClient
     .geocodeReverse({
       latitude: lnglat["lat"], 
       longitude: lnglat["lng"]
     }, function(err, res) {
-      console.log(err, res)
+      // console.log(err, res)
     });
   })
   .then(address => {
     currAddress = address.entity.features[0].place_name
-    console.log(`full address is ${currAddress}`)
+    // console.log(`full address is ${currAddress}`)
   })
   .then(() => {
     return axios.get(`${zoningUrl}${lnglat["lng"]},${lnglat["lat"]}.json`, {
@@ -57,7 +57,7 @@ map.on('click', function(e) {
     })
   })
   .then(response => {
-    console.log(response)
+    // console.log(response)
   })
   .then(() => {
     var percentageOfLot = (areaOfHouse/areaOfParcel)*100;
@@ -75,7 +75,7 @@ map.on('click', function(e) {
     var citystatezip = currAddress.substr(currAddress.indexOf(','), currAddress.length).replace(/\D+/, '')
     citystatezip = citystatezip.replace(/\D+/, '')
     fun(address);     //call fun with selected address
-    console.log(`address is ${address} and zip is ${citystatezip}`)
+    // console.log(`address is ${address} and zip is ${citystatezip}`)
   })
 });
 	
@@ -112,6 +112,7 @@ map.on('click', function(e) {
     var yearBuilt;
     var percentageOfLot = (areaOfHouse/areaOfParcel)*100;
     percentageOfLot = Math.round(percentageOfLot);
+    console.log(`percent coverage: ${percentageOfLot}%`)
 
     $.getJSON('https://api.myjson.com/bins/m0wey', function(data){  //get MTurk data for each thing
       var found = false;
@@ -150,7 +151,7 @@ map.on('click', function(e) {
        }
        if (!found){
                 document.getElementById("compInfo").innerHTML = "";
-                document.getElementById("compInfo").innerHTML = "EDC does not have data for this property yet.";
+                document.getElementById("compInfo").innerHTML = `House to Lot Coverage: ${percentageOfLot}% <br/> EDC does not have additional data for this property yet.`;
 
                 document.getElementById("locInfo").innerHTML = "";
                 document.getElementById("locInfo").innerHTML = "EDC does not have data for this property yet";
